@@ -12,6 +12,7 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/map_page.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
@@ -20,8 +21,13 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <div id="map"></div>
+        <p>Mooze wildlife spotting app</p>
+        <div id="coordinate"></div>
+        <div class="map" >
+            <svg id="map" width="500px" height="500px">
+
+            </svg>
+        </div>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
@@ -31,6 +37,8 @@
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
+            var anchLat = 61.1954;
+            var anchLon = -149.4784
             var po = org.polymaps;
 
             var map = po.map()
@@ -38,9 +46,12 @@
                 .add(po.interact())
                 .add(po.hash());
 
-            map.add(po.image()
-                .url(po.url("https://tiles.wmflabs.org/osm-no-labels/${z}/${x}/${y}.png")));
-                //.hosts(["a.", "b.", "c.", ""])));
+            map.add(po.image().url("https://a.tile.openstreetmap.org/{Z}/{X}/{Y}.png"));
+
+            map.zoom(8.25);
+            map.center({lat: anchLat, lon: anchLon});
+            map.add(po.compass());
+
 
         </script>
     </body>

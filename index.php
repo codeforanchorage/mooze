@@ -71,10 +71,12 @@ require "php/dbconnect.php";
                 }
             }
 
+            //Center and zoom in on user position
             function showPosition(position) {
                 user_location.innerHTML = "LAT: " + position.coords.latitude +
                         " LON: " + position.coords.longitude;
                 map.center({lat: position.coords.latitude, lon: position.coords.longitude});
+                map.zoom(14);
             }
 
 

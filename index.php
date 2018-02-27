@@ -1,5 +1,11 @@
 <?php
 require "php/dbconnect.php";
+global $dbcon;
+$sql = "SELECT * FROM mooze.sighting";
+$statement = $dbcon->prepare($sql);
+$statement->execute();
+$sighting = $statement->fetch();
+
 ?>
 
 
@@ -33,6 +39,8 @@ require "php/dbconnect.php";
             </svg>
             <p id="user_location"></p>
         </div>
+
+        <div id="dbjunk"><?php echo $sighting['datetime'];?></div>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>

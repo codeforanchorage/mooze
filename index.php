@@ -2,7 +2,7 @@
 require "php/dbconnect.php";
 global $dbcon;
 $sql = "SELECT * FROM mooze.sighting";
-$statement = $dbcon->prepare($sql);
+$statement = $dbCon->prepare($sql);
 $statement->execute();
 $sighting = $statement->fetch();
 
@@ -14,7 +14,7 @@ $sighting = $statement->fetch();
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>Mooze Wildlife Spotting</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -31,7 +31,7 @@ $sighting = $statement->fetch();
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
+
         <p>Mooze wildlife spotting app</p>
         <div id="coordinate"></div>
         <div class="map" >
@@ -40,7 +40,7 @@ $sighting = $statement->fetch();
             <p id="user_location"></p>
         </div>
 
-        <div id="dbjunk"><?php echo $sighting['datetime'];?></div>
+        <div id="dbjunk"><?php echo "Most recent sighting was on: " . $sighting['datetime']?></div>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>

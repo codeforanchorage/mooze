@@ -1,6 +1,6 @@
 <?php
 
-$host = "kyleluoma.com";
+$host = "localhost";
 $dbname = "mooze";
 $username = "mooze_client";
 $password = "bullwinkle";

@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="10cc0f0b-d24f-4d49-9cd4-2d0fb42efcfb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/CRUD/dbconnect.php" afterPath="$PROJECT_DIR$/php/CRUD/dbconnect.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/CRUD/selectAll.php" afterPath="$PROJECT_DIR$/php/CRUD/selectAll.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/php/dbconnect.php" afterPath="$PROJECT_DIR$/php/CRUD/dbconnect.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,14 +58,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="selectAll.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="selectAll.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/CRUD/selectAll.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+            <state relative-caret-position="420">
+              <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding>
-                <marker date="1520398596043" expanded="true" signature="55:83" ph="SELECT * FRO... sighting" />
+                <marker date="1520399277678" expanded="true" signature="54:82" ph="SELECT * FRO... sighting" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbconnect.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php/CRUD/dbconnect.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -91,6 +100,7 @@
         <option value="$PROJECT_DIR$/php/CRUD/retrieval.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/php/CRUD/selectAll.php" />
+        <option value="$PROJECT_DIR$/php/CRUD/dbconnect.php" />
       </list>
     </option>
   </component>
@@ -290,7 +300,7 @@
       <option name="presentableId" value="Default" />
       <updated>1519590256683</updated>
       <workItem from="1519590257926" duration="11051000" />
-      <workItem from="1520391199728" duration="5469000" />
+      <workItem from="1520391199728" duration="6201000" />
     </task>
     <task id="LOCAL-00001" summary="changed tileserver url">
       <created>1519592025248</created>
@@ -327,11 +337,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520394390050</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added CRUD directory and selectAll.php">
+      <created>1520398607268</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1520398607268</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16520000" />
+    <option name="totallyTimeSpent" value="17252000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -494,11 +511,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/php/CRUD/selectAll.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        <state relative-caret-position="420">
+          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding>
-            <marker date="1520398596043" expanded="true" signature="55:83" ph="SELECT * FRO... sighting" />
+            <marker date="1520399277678" expanded="true" signature="54:82" ph="SELECT * FRO... sighting" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/CRUD/dbconnect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>

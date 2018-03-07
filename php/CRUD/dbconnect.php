@@ -8,7 +8,7 @@ $password = "bullwinkle";
 try
 {
     $dbCon = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    echo "Connected to database!";
+    //echo "Connected to database!";
 }
 catch(Exception $e)
 {

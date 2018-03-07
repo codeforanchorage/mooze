@@ -1,10 +1,10 @@
 <?php
-require "/dbconnect.php";
-global $dbcon;
+require "dbconnect.php";
+global $dbCon;
 $sql = "SELECT * FROM mooze.sighting";
 $statement = $dbCon->prepare($sql);
 $statement->execute();
-$sighting = $statement->fetch();
+$sighting = $statement->fetchAll();
 ?>
 
 <!doctype html>
@@ -19,12 +19,13 @@ $sighting = $statement->fetch();
 
 <?php
 $length = count($sighting);
-echo "<p> Testing CRUD: </p>";
 for ($i = 0; $i < $length; $i++) {
-    echo "<p> 1. " . $sighting[$i]['sightingID'] . "</p>";
-    echo "<p> 2. " . $sighting[$i]['datetime'] . "</p>";
-    echo "<p> 3. " . $sighting[$i]['latitude'] . "</p>";
-    echo "<p> 4. " . $sighting[$i]['longitude'] . "</p>";
+    echo "<p>{sightingID: " . $sighting[$i]['sightingID'] . ",";
+    echo " datetime: " . $sighting[$i]['datetime'] . ",";
+    echo " latitude: " . $sighting[$i]['latitude'] . ",";
+    echo " longitude: " . $sighting[$i]['longitude'] . ",";
+    echo " mooseqty: " . $sighting[$i]['mooseqty'] . ",";
+    echo " bearqty: " . $sighting[$i]['bearqty'] . "}</p>";
 }
 ?>
 

@@ -4,7 +4,7 @@ global $dbcon;
 $sql = "SELECT * FROM mooze.sighting";
 $statement = $dbCon->prepare($sql);
 $statement->execute();
-$sighting = $statement->fetch();
+$sighting = $statement->fetchall();
 
 ?>
 

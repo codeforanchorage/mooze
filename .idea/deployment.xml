@@ -9,21 +9,7 @@
           </mappings>
         </serverdata>
       </paths>
-      <paths name="My CSUMB Folder">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="VaioServer">
-        <serverdata>
-          <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
-          </mappings>
-        </serverdata>
-      </paths>
-      <paths name="kyleluoma.com">
+      <paths name="kyleluoma.com/mooze/">
         <serverdata>
           <mappings>
             <mapping deploy="/var/www/html/mooze" local="$PROJECT_DIR$" web="/" />

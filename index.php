@@ -38,6 +38,7 @@ $sighting = $statement->fetchall();
             <svg id="map" width="500px" height="500px">
             </svg>
             <p id="user_location"></p>
+            <p id="moose_data"></p>
         </div>
 
         <div id="dbjunk"><?php echo "Most recent sighting was on: " . $sighting['datetime']?></div>
@@ -47,9 +48,13 @@ $sighting = $statement->fetchall();
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script src="js/polymaps.js"></script>
+        <script src="js/ajax.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
+            var moose_data = document.getElementById("moose_data");
+            var ajax_moose = selectAll();
+            moose_data.innerHTML = JSON.parse(ajax_moose);
 
             var anchLat = 61.1954;
             var anchLon = -149.4784;

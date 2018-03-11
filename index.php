@@ -39,6 +39,7 @@ $sighting = $statement->fetchall();
             </svg>
             <p id="user_location"></p>
             <p id="moose_data"></p>
+            <button type="button" id="test_button">Click Me to dump JSON!</button>
         </div>
 
         <div id="dbjunk"><?php echo "Most recent sighting was on: " . $sighting['datetime']?></div>
@@ -49,18 +50,23 @@ $sighting = $statement->fetchall();
         <script src="js/main.js"></script>
         <script src="js/polymaps.js"></script>
         <script src="js/ajax.js"></script>
+        <script src="js/user_location.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-            var moose_data = document.getElementById("moose_data");
-            var ajax_moose = selectAll();
-            moose_data.innerHTML = JSON.parse(ajax_moose);
 
             var anchLat = 61.1954;
             var anchLon = -149.4784;
             var po = org.polymaps;
 
             getUserLocation();
+
+            var test_button = document.getElementById("test_button");
+            test_button.addEventListener( "click",
+                function(){
+                    selectAll();
+                }
+            );
 
             var map = po.map()
                 .container(document.getElementById("map").appendChild(po.svg("svg")))
@@ -72,26 +78,6 @@ $sighting = $statement->fetchall();
             map.zoom(8.25);
             map.center({lat: anchLat, lon: anchLon});
             map.add(po.compass());
-
-            //Geolocation:
-            var user_location = document.getElementById("user_location");
-
-            function getUserLocation() {
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(showPosition);
-                } else {
-                    user_location.innerHTML = "No geolocation support.";
-                }
-            }
-
-            //Center and zoom in on user position
-            function showPosition(position) {
-                user_location.innerHTML = "LAT: " + position.coords.latitude +
-                        " LON: " + position.coords.longitude;
-                map.center({lat: position.coords.latitude, lon: position.coords.longitude});
-                map.zoom(14);
-            }
-
 
         </script>
     </body>

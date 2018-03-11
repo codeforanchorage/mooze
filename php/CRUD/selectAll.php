@@ -6,7 +6,7 @@ $statement = $dbCon->prepare($sql);
 $statement->execute();
 $sighting = $statement->fetchAll();
 
-header("content-type:application/json");
+ header("content-type:application/json");
 echo json_encode($sighting);
 
 /* Manual JSON generation:

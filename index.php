@@ -34,12 +34,8 @@ $sighting = $statement->fetchall();
 
         <p>Mooze wildlife spotting app</p>
         <div id="coordinate"></div>
-        <div class="map" >
-            <svg id="map" width="500px" height="500px">
-            </svg>
-            <p id="user_location"></p>
-            <p id="moose_data"></p>
-            <button type="button" id="test_button">Click Me to dump JSON!</button>
+        <div class="mapContainer" >
+            <div id='map' style='width: 400px; height: 300px;'></div>
         </div>
 
         <div id="dbjunk"><?php echo "Most recent sighting was on: " . $sighting['datetime']?></div>
@@ -48,18 +44,23 @@ $sighting = $statement->fetchall();
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/polymaps.js"></script>
         <script src="js/ajax.js"></script>
         <script src="js/user_location.js"></script>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
 
             var anchLat = 61.1954;
             var anchLon = -149.4784;
-            var po = org.polymaps;
-
             getUserLocation();
+
+            mapboxgl.accessToken = 'pk.eyJ1Ijoia3lsZWx1b21hIiwiYSI6ImNqZXN6YmkxaTAyaTgyd3FvZWh4eGMzNnQifQ.zuc_sYc32KMNfyi0NHitJA';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v10'
+            });
 
             var test_button = document.getElementById("test_button");
             test_button.addEventListener( "click",
@@ -68,16 +69,7 @@ $sighting = $statement->fetchall();
                 }
             );
 
-            var map = po.map()
-                .container(document.getElementById("map").appendChild(po.svg("svg")))
-                .add(po.interact())
-                .add(po.hash());
 
-            map.add(po.image().url("https://a.tile.openstreetmap.org/{Z}/{X}/{Y}.png"));
-
-            map.zoom(8.25);
-            map.center({lat: anchLat, lon: anchLon});
-            map.add(po.compass());
 
         </script>
     </body>

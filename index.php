@@ -1,13 +1,3 @@
-<?php
-require "php/dbconnect.php";
-global $dbcon;
-$sql = "SELECT * FROM mooze.sighting";
-$statement = $dbCon->prepare($sql);
-$statement->execute();
-$sighting = $statement->fetchall();
-
-?>
-
 
 <!doctype html>
 <html class="no-js" lang="">
@@ -31,15 +21,6 @@ $sighting = $statement->fetchall();
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-
-        <p>Mooze wildlife spotting app</p>
-        <div id="coordinate"></div>
-        <div class="mapContainer" >
-            <div id='map' style='width: 400px; height: 300px;'></div>
-        </div>
-
-        <div id="dbjunk"><?php echo "Most recent sighting was on: " . $sighting['datetime']?></div>
-
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
@@ -49,27 +30,60 @@ $sighting = $statement->fetchall();
         <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
         <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
 
+        <p>Mooze wildlife spotting app</p>
+        <div id="coordinate"></div>
+        <div class="mapContainer" >
+            <div id='map' style='width: 400px; height: 300px;'></div>
+        </div>
+        <div><p id="userLocation"></p></div>
+        <div><p id="mooseData"></p></div>
+
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
 
             var anchLat = 61.1954;
             var anchLon = -149.4784;
-            getUserLocation();
+
+            $(function() {
+                getUserLocation();
+                selectAll();
+            })
+
 
             mapboxgl.accessToken = 'pk.eyJ1Ijoia3lsZWx1b21hIiwiYSI6ImNqZXN6YmkxaTAyaTgyd3FvZWh4eGMzNnQifQ.zuc_sYc32KMNfyi0NHitJA';
             var map = new mapboxgl.Map({
                 container: 'map',
+                center: [anchLon, anchLat],
+                zoom: 6.0,
                 style: 'mapbox://styles/mapbox/streets-v10'
             });
 
-            var test_button = document.getElementById("test_button");
-            test_button.addEventListener( "click",
-                function(){
-                    selectAll();
+            // Draw GeoJSON file (TODO: Refactor into seperate)
+            map.addlayer({
+                "id": "points",
+                "type": "symbol",
+                "source": {
+                    "type": "geojson",
+                    "data": selectAll()
                 }
-            );
+            })
 
+            //Geolocation:
+            var user_location = document.getElementById("userLocation");
 
+            function getUserLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    user_location.innerHTML = "No geolocation support.";
+                }
+            }
+
+            //Center and zoom in on user position
+            function showPosition(position) {
+                user_location.innerHTML = "LAT: " + position.coords.latitude +
+                    " LON: " + position.coords.longitude;
+            }
 
         </script>
     </body>

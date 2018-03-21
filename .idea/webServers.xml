@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="1a113154-4827-4327-a8ff-60e03e497803" name="kyleluoma.com/mooze/" url="http://kyleluoma.com">
-        <fileTransfer host="kyleluoma.com" port="22" rootFolder="/var/www/html/mooze" accessType="SFTP">
+      <webServer id="1a113154-4827-4327-a8ff-60e03e497803" name="kyleluoma.com/mooze/" url="http://kyleluoma.com/mooze/">
+        <fileTransfer host="kyleluoma.com" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

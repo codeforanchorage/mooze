@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10cc0f0b-d24f-4d49-9cd4-2d0fb42efcfb" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/CRUD/insertSighting.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/php/CRUD/CRUD_test_driver.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ajax.js" afterPath="$PROJECT_DIR$/js/ajax.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/CRUD/insertSighting.php" afterPath="$PROJECT_DIR$/php/CRUD/insertSighting.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,16 +21,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
               <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="humans.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/humans.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -62,8 +51,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="231">
+              <caret line="47" column="20" lean-forward="true" selection-start-line="47" selection-start-column="20" selection-end-line="48" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -72,34 +61,32 @@
       <file leaf-file-name="ajax.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ajax.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
-              <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+            <state relative-caret-position="378">
+              <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="35" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="insertSighting.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="insertSighting.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/CRUD/insertSighting.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="89" lean-forward="false" selection-start-line="12" selection-start-column="89" selection-end-line="12" selection-end-column="89" />
+            <state relative-caret-position="126">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
-                <element signature="e#6#172#0#PHP" expanded="true" />
-                <marker date="1521816372713" expanded="true" signature="183:261" ph="INSERT INTO sighting... " />
-                <marker date="1521816372713" expanded="true" signature="183:268" ph="INSERT INTO sighting... " />
-                <marker date="1521816372713" expanded="true" signature="183:295" ph="INSERT INTO sighting... " />
-                <marker date="1521816372713" expanded="true" signature="183:296" ph="INSERT INTO sighting... " />
-                <marker date="1521816372713" expanded="true" signature="183:322" ph="INSERT INTO sighting... " />
-                <marker date="1521816372713" expanded="true" signature="183:323" ph="INSERT INTO sighting... " />
-                <marker date="1521816372713" expanded="true" signature="183:348" ph="INSERT INTO sighting... " />
-                <marker date="1521816372713" expanded="true" signature="183:351" ph="INSERT INTO sighting... " />
-                <marker date="1521816372713" expanded="true" signature="183:352" ph="INSERT INTO sighting... " />
-                <marker date="1521816372713" expanded="true" signature="183:379" ph="INSERT INTO sighting... " />
-                <marker date="1521816372713" expanded="true" signature="183:380" ph="INSERT INTO sighting... " />
-                <marker date="1521816372713" expanded="true" signature="183:406" ph="INSERT INTO sighting... " />
-                <marker date="1521816372713" expanded="true" signature="183:407" ph="INSERT INTO sighting... " />
+                <element signature="e#56#222#0#PHP" expanded="true" />
+                <marker date="1521835525689" expanded="true" signature="241:464" ph="INSERT INTO sighting... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CRUD_test_driver.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php/CRUD/CRUD_test_driver.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,8 +104,8 @@
       <file leaf-file-name="selectAll.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/CRUD/selectAll.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+            <state relative-caret-position="222">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
                 <marker date="1521597095345" expanded="true" signature="265:293" ph="SELECT * FRO... sighting" />
               </folding>
@@ -129,8 +116,8 @@
       <file leaf-file-name="dbconnect.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/CRUD/dbconnect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+            <state relative-caret-position="147">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="16" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -144,6 +131,7 @@
         <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="tsconfig.json" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -166,6 +154,7 @@
         <option value="$PROJECT_DIR$/js/ajax.js" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/php/CRUD/insertSighting.php" />
+        <option value="$PROJECT_DIR$/php/CRUD/CRUD_test_driver.html" />
       </list>
     </option>
   </component>
@@ -208,7 +197,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -269,6 +257,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -281,6 +270,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -418,7 +408,8 @@
       <workItem from="1520391199728" duration="6201000" />
       <workItem from="1520808780000" duration="1814000" />
       <workItem from="1521765583641" duration="3739000" />
-      <workItem from="1521814997508" duration="1412000" />
+      <workItem from="1521814997508" duration="1459000" />
+      <workItem from="1521835289686" duration="1274000" />
     </task>
     <task id="LOCAL-00001" summary="changed tileserver url">
       <created>1519592025248</created>
@@ -490,17 +481,25 @@
       <option name="project" value="LOCAL" />
       <updated>1521600151433</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added insertSighting.php to upload sighting data&#10;TODO: Debug php insert scripty.">
+      <created>1521816443314</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1521816443314</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40376000" />
+    <option name="totallyTimeSpent" value="41697000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6705508" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21666667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -534,21 +533,14 @@
     <MESSAGE value="Added CRUD directory and selectAll.php" />
     <MESSAGE value="Implementing AJAX procedures for database retrieval&#10;TODO: sort out JSON object return issue in selectAll function" />
     <MESSAGE value="Replaced polymap with mapbox; manual geoJSON generation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Replaced polymap with mapbox; manual geoJSON generation" />
+    <MESSAGE value="Added insertSighting.php to upload sighting data&#10;TODO: Debug php insert scripty." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added insertSighting.php to upload sighting data&#10;TODO: Debug php insert scripty." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/plugins.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/polymaps.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -818,14 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/CRUD/dbconnect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/polymaps.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -884,50 +868,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/php/CRUD/selectAll.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="222">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <marker date="1521597095345" expanded="true" signature="265:293" ph="SELECT * FRO... sighting" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/ajax.js">
+    <entry file="file://$PROJECT_DIR$/php/CRUD/dbconnect.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state relative-caret-position="147">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="16" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/CRUD/insertSighting.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="89" lean-forward="false" selection-start-line="12" selection-start-column="89" selection-end-line="12" selection-end-column="89" />
+        <state relative-caret-position="126">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <element signature="e#6#172#0#PHP" expanded="true" />
-            <marker date="1521816372713" expanded="true" signature="183:261" ph="INSERT INTO sighting... " />
-            <marker date="1521816372713" expanded="true" signature="183:268" ph="INSERT INTO sighting... " />
-            <marker date="1521816372713" expanded="true" signature="183:295" ph="INSERT INTO sighting... " />
-            <marker date="1521816372713" expanded="true" signature="183:296" ph="INSERT INTO sighting... " />
-            <marker date="1521816372713" expanded="true" signature="183:322" ph="INSERT INTO sighting... " />
-            <marker date="1521816372713" expanded="true" signature="183:323" ph="INSERT INTO sighting... " />
-            <marker date="1521816372713" expanded="true" signature="183:348" ph="INSERT INTO sighting... " />
-            <marker date="1521816372713" expanded="true" signature="183:351" ph="INSERT INTO sighting... " />
-            <marker date="1521816372713" expanded="true" signature="183:352" ph="INSERT INTO sighting... " />
-            <marker date="1521816372713" expanded="true" signature="183:379" ph="INSERT INTO sighting... " />
-            <marker date="1521816372713" expanded="true" signature="183:380" ph="INSERT INTO sighting... " />
-            <marker date="1521816372713" expanded="true" signature="183:406" ph="INSERT INTO sighting... " />
-            <marker date="1521816372713" expanded="true" signature="183:407" ph="INSERT INTO sighting... " />
+            <element signature="e#56#222#0#PHP" expanded="true" />
+            <marker date="1521835525689" expanded="true" signature="241:464" ph="INSERT INTO sighting... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="35" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="47" column="20" lean-forward="true" selection-start-line="47" selection-start-column="20" selection-end-line="48" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/CRUD/CRUD_test_driver.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

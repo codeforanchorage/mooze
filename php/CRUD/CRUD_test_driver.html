@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Test Driver</title>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+</head>
+<body>
+    <script>
+        //Test insertSighting:
+        var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+        var latitude = 61.1940;
+        var longitude = -149.4770;
+        var mooseQty = 1;
+        var bearQty = 0;
+    </script>
+
+    <form action="insertSighting.php" method="post" id="insertSightingForm">
+        <input type="text" id="datetime">
+        <input type="text" id="latitude">
+        <input type="text" id="longitude">
+        <input type="text" id="mooseqty">
+        <input type="text" id="bearqty">
+        <input type="submit">
+    </form>
+</body>
+</html>

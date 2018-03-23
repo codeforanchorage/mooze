@@ -38,8 +38,17 @@
         <div><p id="userLocation"></p></div>
         <div><p id="mooseData"></p></div>
 
+        <button type="button" id="insertTest">Insertion Test</button>
+
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
+
+            document.getElementById('insertTest')
+                .addEventListener("click", function(){
+                    var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+                    insertSighting(datetime, 61.1940, -149.4770, 1, 0);
+                }
+            );
 
             var anchLat = 61.1954;
             var anchLon = -149.4784;
@@ -58,15 +67,9 @@
                 style: 'mapbox://styles/mapbox/streets-v10'
             });
 
-            // Draw GeoJSON file (TODO: Refactor into seperate)
-            map.addlayer({
-                "id": "points",
-                "type": "symbol",
-                "source": {
-                    "type": "geojson",
-                    "data": selectAll()
-                }
-            })
+            var userMarker = new mapboxgl.Marker()
+                .setLngLat([anchLon, anchLat])
+                .addTo(map);
 
             //Geolocation:
             var user_location = document.getElementById("userLocation");

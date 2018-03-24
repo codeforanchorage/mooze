@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="10cc0f0b-d24f-4d49-9cd4-2d0fb42efcfb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/ajax.js" afterPath="$PROJECT_DIR$/js/ajax.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/CRUD/CRUD_test_driver.html" afterPath="$PROJECT_DIR$/php/CRUD/CRUD_test_driver.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/CRUD/insertSighting.php" afterPath="$PROJECT_DIR$/php/CRUD/insertSighting.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,16 +15,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+            <state relative-caret-position="306">
+              <caret line="66" column="88" lean-forward="false" selection-start-line="66" selection-start-column="88" selection-end-line="66" selection-end-column="88" />
               <folding>
-                <marker date="1521906466275" expanded="true" signature="3557:3575" ph="..." />
-                <marker date="1521906466275" expanded="true" signature="3557:3587" ph="..." />
-                <marker date="1521906466275" expanded="true" signature="3557:3595" ph="..." />
-                <marker date="1521906466275" expanded="true" signature="3558:3575" ph="..." />
+                <marker date="1521908769232" expanded="true" signature="3998:4015" ph="..." />
               </folding>
             </state>
           </provider>
@@ -42,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajax.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ajax.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/ajax.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
-              <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+              <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -157,10 +152,10 @@
         <option value="$USER_HOME$/Downloads/restaurants-data.geojson" />
         <option value="$PROJECT_DIR$/js/tsconfig.json" />
         <option value="$PROJECT_DIR$/php/CRUD/selectAll.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/php/CRUD/CRUD_test_driver.html" />
         <option value="$PROJECT_DIR$/php/CRUD/insertSighting.php" />
         <option value="$PROJECT_DIR$/js/ajax.js" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -503,11 +498,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521816443314</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Debugged insertSighting.php&#10;Cleaned up sql insert statement&#10;updated CRUD test driver">
+      <created>1521908171752</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1521908171752</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43341000" />
+    <option name="totallyTimeSpent" value="43998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="0" width="960" height="1040" extended-state="0" />
@@ -561,7 +563,8 @@
     <MESSAGE value="Implementing AJAX procedures for database retrieval&#10;TODO: sort out JSON object return issue in selectAll function" />
     <MESSAGE value="Replaced polymap with mapbox; manual geoJSON generation" />
     <MESSAGE value="Added insertSighting.php to upload sighting data&#10;TODO: Debug php insert scripty." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added insertSighting.php to upload sighting data&#10;TODO: Debug php insert scripty." />
+    <MESSAGE value="Debugged insertSighting.php&#10;Cleaned up sql insert statement&#10;updated CRUD test driver" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugged insertSighting.php&#10;Cleaned up sql insert statement&#10;updated CRUD test driver" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -580,10 +583,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1521906466275" expanded="true" signature="3557:3575" ph="..." />
-            <marker date="1521906466275" expanded="true" signature="3557:3587" ph="..." />
-            <marker date="1521906466275" expanded="true" signature="3557:3595" ph="..." />
-            <marker date="1521906466275" expanded="true" signature="3558:3575" ph="..." />
+            <marker date="1521908769232" expanded="true" signature="3998:4015" ph="..." />
           </folding>
         </state>
       </provider>
@@ -695,10 +695,7 @@
         <state relative-caret-position="-561">
           <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <marker date="1521906466275" expanded="true" signature="3557:3575" ph="..." />
-            <marker date="1521906466275" expanded="true" signature="3557:3587" ph="..." />
-            <marker date="1521906466275" expanded="true" signature="3557:3595" ph="..." />
-            <marker date="1521906466275" expanded="true" signature="3558:3575" ph="..." />
+            <marker date="1521908769232" expanded="true" signature="3998:4015" ph="..." />
           </folding>
         </state>
       </provider>
@@ -890,19 +887,6 @@
     <entry file="file://$USER_HOME$/Downloads/2016_Election_Results__USPresidentVicePresident.geojson" />
     <entry file="file://$USER_HOME$/Downloads/restaurants-data.geojson" />
     <entry file="file://$PROJECT_DIR$/js/tsconfig.json" />
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding>
-            <marker date="1521906466275" expanded="true" signature="3557:3575" ph="..." />
-            <marker date="1521906466275" expanded="true" signature="3557:3587" ph="..." />
-            <marker date="1521906466275" expanded="true" signature="3557:3595" ph="..." />
-            <marker date="1521906466275" expanded="true" signature="3558:3575" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/CRUD/selectAll.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -945,8 +929,18 @@
     <entry file="file://$PROJECT_DIR$/js/ajax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="4" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+          <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="66" column="88" lean-forward="false" selection-start-line="66" selection-start-column="88" selection-end-line="66" selection-end-column="88" />
+          <folding>
+            <marker date="1521908769232" expanded="true" signature="3998:4015" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

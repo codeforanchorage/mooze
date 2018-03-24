@@ -45,7 +45,10 @@
 
             document.getElementById('insertTest')
                 .addEventListener("click", function(){
+                    //Convert ISO string to MySql datetime format:
+                    //TODO: Refactor to seperate function. This will be called routinely.
                     var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
                     insertSighting(datetime, 61.1940, -149.4770, 1, 0);
                 }
             );
@@ -58,6 +61,11 @@
                 selectAll();
             })
 
+            function drawSightingMarkers() {
+                //TODO: Implement logic to draw markers on map
+                // 1. Pull coordinate data and title from GeoJSON file
+                // 2. Iterate through sightings and populate an array of mapbox markers.
+            }
 
             mapboxgl.accessToken = 'pk.eyJ1Ijoia3lsZWx1b21hIiwiYSI6ImNqZXN6YmkxaTAyaTgyd3FvZWh4eGMzNnQifQ.zuc_sYc32KMNfyi0NHitJA';
             var map = new mapboxgl.Map({

@@ -6,6 +6,16 @@
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 </head>
 <body>
+
+    <h2>Insert data for sighting insert into database:</h2>
+    <form action="insertSighting.php" method="POST" id="insertSightingForm">
+        <input type="text" id="datetime" name="datetime">
+        <input type="text" id="latitude" name="latitude">
+        <input type="text" id="longitude" name="longitude">
+        <input type="text" id="mooseqty" name="mooseqty">
+        <input type="text" id="bearqty" name="bearqty">
+        <input type="submit" name="submit">
+    </form>
     <script>
         //Test insertSighting:
         var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
@@ -13,15 +23,13 @@
         var longitude = -149.4770;
         var mooseQty = 1;
         var bearQty = 0;
-    </script>
+        document.getElementById('datetime').setAttribute('value', datetime);
+        document.getElementById('latitude').setAttribute('value', latitude);
+        document.getElementById('longitude').setAttribute('value', longitude);
+        document.getElementById('mooseqty').setAttribute('value', mooseQty);
+        document.getElementById('bearqty').setAttribute('value', bearQty);
 
-    <form action="insertSighting.php" method="post" id="insertSightingForm">
-        <input type="text" id="datetime">
-        <input type="text" id="latitude">
-        <input type="text" id="longitude">
-        <input type="text" id="mooseqty">
-        <input type="text" id="bearqty">
-        <input type="submit">
-    </form>
+
+    </script>
 </body>
 </html>

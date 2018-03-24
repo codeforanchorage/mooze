@@ -4,8 +4,7 @@
 
 </head>
 <body>
-
-</body>
+<p>Result of insert query:</p>
 
 <?php
 /**
@@ -17,15 +16,20 @@
  * Uses POST method to receive parameters
  * @PARAM
  */
+require "dbconnect.php";
+global $dbCon;
+
+echo empty($_POST);
+
 try
 {
-    $sql = "INSERT INTO sighting (datetime, latitude, longitude, mooseqty, bearqty) VALUES" . " (" . $_POST['datetime'] . ", ". $_POST['latitude'] . ", " . $_POST['longitude'] . ", " . $_POST['mooseqty'] . ", " . $_POST['bearqty'] . ")";
+    $sql = "INSERT INTO sighting (datetime, latitude, longitude, mooseqty, bearqty) VALUES" . " ('" . $_POST['datetime'] . "', ". $_POST['latitude'] . ", " . $_POST['longitude'] . ", " . $_POST['mooseqty'] . ", " . $_POST['bearqty'] . ")";
     $statement = $dbCon->prepare($sql);
     $statement->execute();
 }
 catch(Exception $e)
 {
-    echo $e.gettext();
+    echo $e;
     exit();
 }
 
@@ -33,3 +37,4 @@ catch(Exception $e)
 
 ?>
 
+</body>

@@ -2,8 +2,6 @@
  * Selects all sighting tuples from database
  * Returns string of JSON file using JSON.stringify
  */
-
-    
 function selectAll() {
     var mooseData = document.getElementById("mooseData");
     $.ajax({

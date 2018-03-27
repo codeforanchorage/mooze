@@ -1,5 +1,4 @@
-//Geolocation:
-var user_location = document.getElementById("user_location");
+var user_location = document.getElementById("userLocation");
 
 function getUserLocation() {
     if (navigator.geolocation) {
@@ -11,8 +10,8 @@ function getUserLocation() {
 
 //Center and zoom in on user position
 function showPosition(position) {
-    user_location.innerHTML = "LAT: " + position.coords.latitude +
-        " LON: " + position.coords.longitude;
-    map.center({lat: position.coords.latitude, lon: position.coords.longitude});
-    map.zoom(14);
+    userLat = position.coords.latitude;
+    userLon = position.coords.longitude;
+    document.getElementById("userLocation").innerHTML = "LAT: " + userLat +
+        " LON: " + userLon;
 }

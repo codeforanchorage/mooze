@@ -13,9 +13,10 @@ $statement->execute();
 $sighting = $statement->fetchAll();
 
  header("content-type:application/json");
-//echo json_encode($sighting);
+echo json_encode($sighting);
 
 //Manual JSON generation:
+/*
 $length = count($sighting);
 echo "{\"type\": \"FeatureCollection\",";
 echo "\"features\": [";
@@ -37,4 +38,5 @@ for ($i = 0; $i < $length; $i++) {
     }
 }
 echo "]}";
+*/
 ?>

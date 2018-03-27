@@ -26,7 +26,7 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script src="js/ajax.js"></script>
-        <script src="js/user_location.js"></script>
+        //<script src="js/user_location.js"></script>
         <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
         <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
 
@@ -42,31 +42,13 @@
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-
-            document.getElementById('insertTest')
-                .addEventListener("click", function(){
-                    //Convert ISO string to MySql datetime format:
-                    //TODO: Refactor to seperate function. This will be called routinely.
-                    var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
-
-                    insertSighting(datetime, 61.1940, -149.4770, 1, 0);
-                }
-            );
-
+            //Variables:
             var anchLat = 61.1954;
             var anchLon = -149.4784;
+            var userLat = 0;
+            var userLon = 0;
 
-            $(function() {
-                getUserLocation();
-                selectAll();
-            })
-
-            function drawSightingMarkers() {
-                //TODO: Implement logic to draw markers on map
-                // 1. Pull coordinate data and title from GeoJSON file
-                // 2. Iterate through sightings and populate an array of mapbox markers.
-            }
-
+            //Initialize the map
             mapboxgl.accessToken = 'pk.eyJ1Ijoia3lsZWx1b21hIiwiYSI6ImNqZXN6YmkxaTAyaTgyd3FvZWh4eGMzNnQifQ.zuc_sYc32KMNfyi0NHitJA';
             var map = new mapboxgl.Map({
                 container: 'map',
@@ -75,11 +57,40 @@
                 style: 'mapbox://styles/mapbox/streets-v10'
             });
 
+            //Execute these functions when document is loaded (ready)
+            $(function() {
+                getUserLocation();
+                drawSightingMarkers();
+                initializeListeners()
+            })
+
+            //Initialize object listeners on the page:
+            function initializeListeners() {
+                document.getElementById('insertTest')
+                    .addEventListener("click", function () {
+                            //Convert ISO string to MySql datetime format:
+                            //TODO: Refactor to seperate function. This will be called routinely.
+                            var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+                            if (userLat != 0 && userLon != 0) {
+                                insertSighting(datetime, userLat, userLon, 1, 0);
+                            }
+                        }
+                    );
+            }
+
+            //Draw markers to the map
+            function drawSightingMarkers() {
+                addAllMarkers();
+            }
+
+            //TEST Marker draw:
             var userMarker = new mapboxgl.Marker()
                 .setLngLat([anchLon, anchLat])
                 .addTo(map);
 
             //Geolocation:
+            //TODO: refactor this into its own function that returns user location data.
             var user_location = document.getElementById("userLocation");
 
             function getUserLocation() {
@@ -92,8 +103,10 @@
 
             //Center and zoom in on user position
             function showPosition(position) {
-                user_location.innerHTML = "LAT: " + position.coords.latitude +
-                    " LON: " + position.coords.longitude;
+                userLat = position.coords.latitude;
+                userLon = position.coords.longitude;
+                user_location.innerHTML = "LAT: " + userLat +
+                    " LON: " + userLon;
             }
 
         </script>

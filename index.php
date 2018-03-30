@@ -47,12 +47,14 @@
             var anchLon = -149.4784;
             var userLat = 0;
             var userLon = 0;
+            var userCoords = [userLon, userLat];
+            var anchCoords = [anchLon, anchLat];
 
             //Initialize the map
             mapboxgl.accessToken = 'pk.eyJ1Ijoia3lsZWx1b21hIiwiYSI6ImNqZXN6YmkxaTAyaTgyd3FvZWh4eGMzNnQifQ.zuc_sYc32KMNfyi0NHitJA';
             var map = new mapboxgl.Map({
                 container: 'map',
-                center: [anchLon, anchLat],
+                center: anchCoords,
                 zoom: 6.0,
                 style: 'mapbox://styles/mapbox/streets-v10'
             });
@@ -70,13 +72,14 @@
                     .addEventListener("click", function () {
                             //Convert ISO string to MySql datetime format:
                             //TODO: Refactor to seperate function. This will be called routinely.
-                            var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
-                            if (userLat != 0 && userLon != 0) {
-                                insertSighting(datetime, userLat, userLon, 1, 0);
-                            }
+                        var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+                        if (userLat != 0 && userLon != 0) {
+                            insertSighting(datetime, userCoords[1], userCoords[0], 1, 0);
                         }
-                    );
+                    }
+                );
             }
 
             //Draw markers to the map
@@ -86,8 +89,13 @@
 
             //TEST Marker draw:
             var userMarker = new mapboxgl.Marker()
-                .setLngLat([anchLon, anchLat])
+                .setLngLat(userCoords)
                 .addTo(map);
+
+            var userMarkerPopup = new mapboxgl.Popup()
+                .setText("User Marker!");
+
+            userMarker.setPopup(userMarkerPopup);
 
             //Geolocation:
             //TODO: refactor this into its own function that returns user location data.
@@ -103,12 +111,16 @@
 
             //Center and zoom in on user position
             function showPosition(position) {
+                // This is a workaround solution:
+                // Assign coordinate values to global DOM variables:
+                // getUserLocation is asynchronous and cannot return
+                // values to other functions when invoked.
                 userLat = position.coords.latitude;
                 userLon = position.coords.longitude;
+                userCoords = [userLon, userLat];
                 user_location.innerHTML = "LAT: " + userLat +
                     " LON: " + userLon;
             }
-
         </script>
     </body>
 </html>

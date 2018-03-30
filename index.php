@@ -84,18 +84,16 @@
 
             //Draw markers to the map
             function drawSightingMarkers() {
-                addAllMarkers();
+                //addAllMarkers();
+                getAllSightings();
             }
 
-            //TEST Marker draw:
-            var userMarker = new mapboxgl.Marker()
-                .setLngLat(userCoords)
-                .addTo(map);
+            //Load map icon images
+            function loadMapImages() {
+                //TODO: load images for icons
+                //REF: https://www.mapbox.com/mapbox-gl-js/example/add-image/
+            }
 
-            var userMarkerPopup = new mapboxgl.Popup()
-                .setText("User Marker!");
-
-            userMarker.setPopup(userMarkerPopup);
 
             //Geolocation:
             //TODO: refactor this into its own function that returns user location data.

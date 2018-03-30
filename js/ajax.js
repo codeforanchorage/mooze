@@ -26,6 +26,25 @@ function addAllMarkers() {
     });
 }
 
+function getAllSightings() {
+    $.ajax({
+        url: 'https://kyleluoma.com/mooze/php/CRUD/selectAllLayer.php',
+        type: 'post',
+        data: {},
+        dataType: 'json',
+        cache: false,
+        success: function(json) {
+            var mooseData = document.getElementById('mooseData');
+            mooseData.innerHTML = JSON.stringify(json);
+            map.on('load', function() {map.addLayer(json)});
+
+        },
+        error: function() {
+            //TODO: add error handling;
+        }
+    });
+}
+
 function insertSighting(dateTime, currentLat, currentLon, mooseQty, bearQty) {
     $.ajax({
         url: 'https://kyleluoma.com/mooze/php/CRUD/insertSighting.php',

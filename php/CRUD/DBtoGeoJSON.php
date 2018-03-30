@@ -20,7 +20,7 @@ function sightingArrayToGeoJSON($sightingArray) {
             "coordinates" => array($sightingArray[$i]['longitude'] * 1, $sightingArray[$i]['latitude'] * 1)
         );
         $propertiesArray = array(
-            "sightingID" => $sightingArray[$i]['sightingID'] * 1,
+            "sightingID" => $sightingArray[$i]['sightingID'] * 1, //Multiply by 1 to force numerical type
             "mooseQty" => $sightingArray[$i]['mooseqty'] * 1,
             "bearQty" => $sightingArray[$i]['bearqty'] * 1
         );

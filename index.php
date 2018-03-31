@@ -35,6 +35,14 @@
         <div class="mapContainer" >
             <div id='map' style='width: 400px; height: 300px;'></div>
         </div>
+        <table>
+            <tr>
+                <td><input type="range" id="timeframeSelection" max="14400" min="1"></td>
+                <td>Timeframe Selection:</td>
+                <td id="timeframeValue"></td>
+            </tr>
+        </table>
+
         <div><p id="userLocation"></p></div>
         <div><p id="mooseData"></p></div>
 
@@ -69,6 +77,8 @@
 
             //Initialize object listeners on the page:
             function initializeListeners() {
+
+                //Insert sighting test button
                 document.getElementById('insertTest')
                     .addEventListener("click", function () {
                             //Convert ISO string to MySql datetime format:
@@ -81,6 +91,26 @@
                         }
                     }
                 );
+
+                //Timeframe selection slider:
+                var TFSel = document.getElementById('timeframeSelection');
+                TFSel.addEventListener("change", function() {
+                    var days = 0;
+                    var hours = 0;
+                    var minutes = TFSel.value;
+                    //Present minutes in Day / Hour / Minute string:
+                    if (minutes >= 60) {
+                        hours = Math.floor(minutes / 60);
+                        minutes = minutes - (hours * 60);
+                    }
+                    if (hours >= 24) {
+                        days = Math.floor(hours / 24);
+                        hours = hours - (days * 24);
+                    }
+                    var timeString = "" + days + " Days, "
+                        + hours + " Hours, " + minutes + " Minutes.";
+                    document.getElementById('timeframeValue').innerHTML = timeString;
+                })
             }
 
             //Draw markers to the map

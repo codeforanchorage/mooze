@@ -59,11 +59,12 @@
                 style: 'mapbox://styles/mapbox/streets-v10'
             });
 
-            //Execute these functions when document is loaded (ready)
+            //Execute these functions after document is loaded (ready)
             $(function() {
                 getUserLocation();
+                loadMapImages();
                 drawSightingMarkers();
-                initializeListeners()
+                initializeListeners();
             })
 
             //Initialize object listeners on the page:
@@ -84,19 +85,22 @@
 
             //Draw markers to the map
             function drawSightingMarkers() {
-                //addAllMarkers();
                 getAllSightings();
             }
 
-            //Load map icon images
+            //Load map icon images and add them to map object
             function loadMapImages() {
                 //TODO: load images for icons
-                //REF: https://www.mapbox.com/mapbox-gl-js/example/add-image/
+                map.loadImage('img/flower-small.jpg', function(error, image) {
+                    //REF: https://www.mapbox.com/mapbox-gl-js/example/add-image/
+                    if(error) {
+                        throw error;
+                    }
+                    map.addImage('flower', image);
+                });
             }
 
-
             //Geolocation:
-            //TODO: refactor this into its own function that returns user location data.
             var user_location = document.getElementById("userLocation");
 
             function getUserLocation() {

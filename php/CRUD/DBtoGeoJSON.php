@@ -19,10 +19,22 @@ function sightingArrayToGeoJSON($sightingArray) {
             "type" => "Point",
             "coordinates" => array($sightingArray[$i]['longitude'] * 1, $sightingArray[$i]['latitude'] * 1)
         );
+
+        $iconName = "none";
+
+        if($sightingArray[$i]['mooseqty'] > 0 && $sightingArray[$i]['bearqty'] == 0) {
+            $iconName = "moose_1";
+        } elseif ($sightingArray[$i]['mooseqty'] == 0 && $sightingArray[$i]['bearqty'] > 0) {
+            $iconName = "bear_1";
+        } else {
+            $iconName = "both";
+        }
+
         $propertiesArray = array(
             "sightingID" => $sightingArray[$i]['sightingID'] * 1, //Multiply by 1 to force numerical type
             "mooseQty" => $sightingArray[$i]['mooseqty'] * 1,
-            "bearQty" => $sightingArray[$i]['bearqty'] * 1
+            "bearQty" => $sightingArray[$i]['bearqty'] * 1,
+            "icon" => $iconName
         );
         $singleFeatureArray = array(
             "type" => "Feature",

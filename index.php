@@ -26,7 +26,7 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script src="js/ajax.js"></script>
-        //<script src="js/user_location.js"></script>
+        <script src="js/user_location.js"></script>
         <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
         <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
 
@@ -41,6 +41,22 @@
                 <td>Timeframe Selection:</td>
                 <td id="timeframeValue"></td>
             </tr>
+            <tr>
+                <td>Moose</td>
+                <td>Bear</td>
+            </tr>
+            <tr>
+                <td id="mooseCount" class="animalCounter">0</td>
+                <td id="bearCount" class="animalCounter">0</td>
+            </tr>
+            <tr>
+                <td id="mooseCountInc">UP</td>
+                <td id="bearCountInc">UP</td>
+            </tr>
+            <tr>
+                <td id="mooseCountDec">DN</td>
+                <td id="bearCountDec">DN</td>
+            </tr>
         </table>
 
         <div><p id="userLocation"></p></div>
@@ -50,6 +66,10 @@
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
+            //Constants
+            const MAX_MOOSE = 10;
+            const MAX_BEAR = 4;
+
             //Variables:
             var anchLat = 61.1954;
             var anchLon = -149.4784;
@@ -57,6 +77,8 @@
             var userLon = 0;
             var userCoords = [userLon, userLat];
             var anchCoords = [anchLon, anchLat];
+            var mooseCount = 0;
+            var bearCount = 0;
 
             //Initialize the map
             mapboxgl.accessToken = 'pk.eyJ1Ijoia3lsZWx1b21hIiwiYSI6ImNqZXN6YmkxaTAyaTgyd3FvZWh4eGMzNnQifQ.zuc_sYc32KMNfyi0NHitJA';
@@ -78,19 +100,46 @@
             //Initialize object listeners on the page:
             function initializeListeners() {
 
-                //Insert sighting test button
-                document.getElementById('insertTest')
-                    .addEventListener("click", function () {
-                            //Convert ISO string to MySql datetime format:
-                            //TODO: Refactor to seperate function. This will be called routinely.
-
-                        var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
-
-                        if (userLat != 0 && userLon != 0) {
-                            insertSighting(datetime, userCoords[1], userCoords[0], 1, 0);
-                        }
+                //Increase moose counter button
+                document.getElementById('mooseCountInc').addEventListener("click", function() {
+                    if(mooseCount < MAX_MOOSE) {
+                        mooseCount += 1;
+                        document.getElementById('mooseCount').innerHTML = mooseCount;
                     }
-                );
+                })
+
+                document.getElementById('mooseCountDec').addEventListener("click", function() {
+                    if(mooseCount > 0) {
+                        mooseCount -= 1;
+                        document.getElementById('mooseCount').innerHTML = mooseCount;
+                    }
+                })
+
+                document.getElementById('bearCountInc').addEventListener("click", function() {
+                    if(bearCount < MAX_BEAR) {
+                        bearCount += 1;
+                        document.getElementById('bearCount').innerHTML = bearCount;
+                    }
+                })
+
+                document.getElementById('bearCountDec').addEventListener("click", function() {
+                    if(bearCount > 0) {
+                        bearCount -= 1;
+                        document.getElementById('bearCount').innerHTML = bearCount;
+                    }
+                })
+
+                //Insert sighting test button
+                document.getElementById('insertTest').addEventListener("click", function () {
+                    //Convert ISO string to MySql datetime format:
+                    //TODO: Refactor to seperate function. This will be called routinely.
+
+                    var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+
+                    if (userLat != 0 && userLon != 0) {
+                        insertSighting(datetime, userCoords[1], userCoords[0], mooseCount, bearCount);
+                    }
+                });
 
                 //Timeframe selection slider:
                 var TFSel = document.getElementById('timeframeSelection');
@@ -127,6 +176,29 @@
                         throw error;
                     }
                     map.addImage('flower', image);
+                });
+                map.loadImage('img/moose_1.png', function(error, image) {
+                    //REF: https://www.mapbox.com/mapbox-gl-js/example/add-image/
+                    if(error) {
+                        throw error;
+                    }
+                    map.addImage('moose_1', image);
+                });
+
+                map.loadImage('img/bear_1.png', function(error, image) {
+                    //REF: https://www.mapbox.com/mapbox-gl-js/example/add-image/
+                    if(error) {
+                        throw error;
+                    }
+                    map.addImage('bear_1', image);
+                });
+
+                map.loadImage('img/both.png', function(error, image) {
+                    //REF: https://www.mapbox.com/mapbox-gl-js/example/add-image/
+                    if(error) {
+                        throw error;
+                    }
+                    map.addImage('both', image);
                 });
             }
 

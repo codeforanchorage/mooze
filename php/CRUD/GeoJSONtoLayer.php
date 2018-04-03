@@ -15,7 +15,7 @@ function GeoJSONtoLayer($GeoJSONArray) {
         "id" => "sightings",
         "type" => "symbol",
         "source" => $sourceArray,
-        "layout" => array("icon-image" => "flower")
+        "layout" => array("icon-image" => "{icon}")
     );
 
     return $layerArray;

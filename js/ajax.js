@@ -26,6 +26,10 @@ function addAllMarkers() {
     });
 }
 
+/**
+ * Retrieves all sightings as a Mapbox layer by invoking selectAllLayer.php
+ * Adds retrieved data to main map object.
+ */
 function getAllSightings() {
     $.ajax({
         url: 'https://kyleluoma.com/mooze/php/CRUD/selectAllLayer.php',
@@ -34,8 +38,8 @@ function getAllSightings() {
         dataType: 'json',
         cache: false,
         success: function(json) {
-            var mooseData = document.getElementById('mooseData');
-            mooseData.innerHTML = JSON.stringify(json);
+            //var mooseData = document.getElementById('mooseData'); //For debugging
+            //mooseData.innerHTML = JSON.stringify(json); //For debugging
             map.on('load', function() {map.addLayer(json)});
 
         },

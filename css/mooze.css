@@ -1,0 +1,71 @@
+/*
+ * Stylesheet for the Mooze page
+ */
+
+/*
+* Increase / Decrease buttons and labels:
+*/
+
+html {
+    padding: 10px;
+}
+
+.incDecButton {
+    background-color: navy;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 35%;
+    color: #E5E0D9;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.incDecButton:link{
+    color: white;
+}
+
+.incDecButton:hover {
+    background-color: #222222;
+    cursor: pointer;
+}
+
+.buttonCell {
+    padding: 4px;
+    width: 80px;
+}
+
+.animalCounter {
+    border-style: solid;
+    border-width: 4px;
+    border-color: navy;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #222222;
+    color: whitesmoke;
+}
+
+.counterCell {
+    padding: 4px;
+}
+
+.counterTitle {
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#counterTable {
+    margin: 0 auto;
+}
+
+#mapContainer {
+    margin: 0 auto;
+}
+
+#controlPad {
+    background-color: #d6d6d6;
+    border-radius: 20px;
+    width: 400px;
+}

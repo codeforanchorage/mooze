@@ -33,37 +33,38 @@
 
         <p>Mooze wildlife spotting app</p>
         <div id="coordinate"></div>
-        <div class="mapContainer" >
-            <div id='map' style='width: 400px; height: 300px;'></div>
-        </div>
-        <div id="controlPad">
-        <table>
-            <tr>
-                <td><input type="range" id="timeframeSelection" max="14400" min="1"></td>
-                <td>Timeframe Selection:</td>
-                <td id="timeframeValue"></td>
-            </tr>
-        </table>
-        <div id="counter">
-        <table id="counterTable">
-            <tr>
-                <td><div class="counterTitle">Moose</div></td>
-                <td><div class="counterTitle">Bear</div></td>
-            </tr>
-            <tr>
-                <td class="counterCell"><div id="mooseCount" class="animalCounter">0</div></td>
-                <td class="counterCell"><div id="bearCount" class="animalCounter">0</div></td>
-            </tr>
-            <tr>
-                <td class="buttonCell"><div id="mooseCountInc" class="incDecButton">UP</div></td>
-                <td class="buttonCell"><div id="bearCountInc" class="incDecButton">UP</div></td>
-            </tr>
-            <tr>
-                <td class="buttonCell"><div id="mooseCountDec" class="incDecButton">DN</div></td>
-                <td class="buttonCell"><div id="bearCountDec" class="incDecButton">DN</div></td>
-            </tr>
-        </table>
-        </div>
+
+        <div id="mapAndControlPad">
+            <div id='map'></div>
+            <div id="controlPad">
+                <table>
+                    <tr>
+                        <td><input type="range" id="timeframeSelection" max="14400" min="1"></td>
+                        <td>Timeframe:</td>
+                        <td id="timeframeValue"></td>
+                    </tr>
+                </table>
+                <div id="counter">
+                <table id="counterTable">
+                    <tr>
+                        <td><div class="counterTitle">Moose</div></td>
+                        <td><div class="counterTitle">Bear</div></td>
+                    </tr>
+                    <tr>
+                        <td class="counterCell"><div id="mooseCount" class="animalCounter">0</div></td>
+                        <td class="counterCell"><div id="bearCount" class="animalCounter">0</div></td>
+                    </tr>
+                    <tr>
+                        <td class="buttonCell"><div id="mooseCountInc" class="incDecButton">UP</div></td>
+                        <td class="buttonCell"><div id="bearCountInc" class="incDecButton">UP</div></td>
+                    </tr>
+                    <tr>
+                        <td class="buttonCell"><div id="mooseCountDec" class="incDecButton">DN</div></td>
+                        <td class="buttonCell"><div id="bearCountDec" class="incDecButton">DN</div></td>
+                    </tr>
+                </table>
+            </div>
+            </div>
         </div>
         <div><p id="userLocation"></p></div>
         <div><p id="mooseData"></p></div>

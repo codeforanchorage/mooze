@@ -1,12 +1,12 @@
 
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="" allowfullscreen="true">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Mooze Wildlife Spotting</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content='initial-scale=1, maximum-scale=1, user-scalable=no'>
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="css/mooze.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css" rel="stylesheet">
 
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
@@ -29,11 +30,8 @@
         <script src="js/ajax.js"></script>
         <script src="js/user_location.js"></script>
         <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
-        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
-
-        <p>Mooze wildlife spotting app</p>
+        <!--link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' /-->
         <div id="coordinate"></div>
-
         <div id="mapAndControlPad">
             <div id='map'></div>
             <div id="controlPad">
@@ -44,6 +42,7 @@
                         <td id="timeframeValue"></td>
                     </tr>
                 </table>
+
                 <div id="counter">
                 <table id="counterTable">
                     <tr>
@@ -62,10 +61,14 @@
                         <td class="buttonCell"><div id="mooseCountDec" class="incDecButton">DN</div></td>
                         <td class="buttonCell"><div id="bearCountDec" class="incDecButton">DN</div></td>
                     </tr>
+                    <tr>
+                        <td colspan="2" class="buttonCell"> <div class="submitButton" style="height: 40px">SUBMIT</div></td>
+                    </tr>
                 </table>
             </div>
             </div>
         </div>
+        <div id="confirmSubmit">Press and hold to confirm submission.</div>
         <div><p id="userLocation"></p></div>
         <div><p id="mooseData"></p></div>
 
@@ -115,6 +118,7 @@
                     }
                 })
 
+                //Decrease moose counter button
                 document.getElementById('mooseCountDec').addEventListener("click", function() {
                     if(mooseCount > 0) {
                         mooseCount -= 1;
@@ -122,6 +126,7 @@
                     }
                 })
 
+                //Increase bear counter button
                 document.getElementById('bearCountInc').addEventListener("click", function() {
                     if(bearCount < MAX_BEAR) {
                         bearCount += 1;
@@ -129,6 +134,7 @@
                     }
                 })
 
+                //Decrease bear counter button
                 document.getElementById('bearCountDec').addEventListener("click", function() {
                     if(bearCount > 0) {
                         bearCount -= 1;

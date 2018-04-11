@@ -62,13 +62,21 @@
                         <td class="buttonCell"><div id="bearCountDec" class="incDecButton">DN</div></td>
                     </tr>
                     <tr>
-                        <td colspan="2" class="buttonCell"> <div class="submitButton" style="height: 40px">SUBMIT</div></td>
+                        <td colspan="2" class="buttonCell"> <div class="submitButton" id="submitButton" style="height: 20px">SUBMIT</div></td>
                     </tr>
                 </table>
             </div>
             </div>
         </div>
-        <div id="confirmSubmit">Press and hold to confirm submission.</div>
+        <div id="confirmSubmit">
+            <table style="margin: 0 auto">
+                <tr><td colspan="2">Are you sure you want to submit this sighting?</td></tr>
+                <tr>
+                    <td id="submitYes">YES</td>
+                    <td id="submitNo">NO</td>
+                </tr>
+            </table>
+        </div>
         <div><p id="userLocation"></p></div>
         <div><p id="mooseData"></p></div>
 
@@ -115,6 +123,7 @@
                     if(mooseCount < MAX_MOOSE) {
                         mooseCount += 1;
                         document.getElementById('mooseCount').innerHTML = mooseCount;
+                        setSubmitColorOnQuantityUpdate()
                     }
                 })
 
@@ -123,6 +132,7 @@
                     if(mooseCount > 0) {
                         mooseCount -= 1;
                         document.getElementById('mooseCount').innerHTML = mooseCount;
+                        setSubmitColorOnQuantityUpdate()
                     }
                 })
 
@@ -131,6 +141,7 @@
                     if(bearCount < MAX_BEAR) {
                         bearCount += 1;
                         document.getElementById('bearCount').innerHTML = bearCount;
+                        setSubmitColorOnQuantityUpdate()
                     }
                 })
 
@@ -139,11 +150,12 @@
                     if(bearCount > 0) {
                         bearCount -= 1;
                         document.getElementById('bearCount').innerHTML = bearCount;
+                        setSubmitColorOnQuantityUpdate()
                     }
                 })
 
                 //Insert sighting test button
-                document.getElementById('insertTest').addEventListener("click", function () {
+                document.getElementById('insertTest').addEventListener("click", function() {
                     //Convert ISO string to MySql datetime format:
                     //TODO: Refactor to seperate function. This will be called routinely.
 
@@ -151,6 +163,31 @@
 
                     if (userLat != 0 && userLon != 0) {
                         insertSighting(datetime, userCoords[1], userCoords[0], mooseCount, bearCount);
+                    }
+                });
+
+                //Insert sighting button pressed
+                document.getElementById('submitButton').addEventListener("click", function() {
+                    //Do nothing if moose and bear counts are 0:
+                    if(mooseCount === 0 && bearCount === 0) {
+                        return;
+                    }
+                    document.getElementById('confirmSubmit').style.visibility = 'visible';
+                });
+
+                //Submission cancel (user presses no in response to confirmation question)
+                document.getElementById('submitNo').addEventListener("click", function() {
+                   document.getElementById('confirmSubmit').style.visibility = 'hidden';
+                });
+
+                //User confirms submission
+                document.getElementById('submitYes').addEventListener("click", function() {
+                    if (userLat != 0 && userLon != 0) {
+                        //Convert ISO string to MySql datetime format:
+                        var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
+                        insertSighting(datetime, userCoords[1], userCoords[0], mooseCount, bearCount);
+                        document.getElementById('confirmSubmit').style.visibility = 'hidden';
+                        location.reload();
                     }
                 });
 
@@ -173,6 +210,16 @@
                         + hours + " Hours, " + minutes + " Minutes.";
                     document.getElementById('timeframeValue').innerHTML = timeString;
                 })
+            }
+
+            //Submit button color setting
+            //Make white if quantity in moose or bear counter
+            function setSubmitColorOnQuantityUpdate() {
+                if(mooseCount === 0 && bearCount === 0) {
+                    document.getElementById('submitButton').style.color = 'black';
+                } else {
+                    document.getElementById('submitButton').style.color = '#E5E0D9';
+                }
             }
 
             //Draw markers to the map

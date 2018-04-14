@@ -49,6 +49,26 @@ function getAllSightings() {
     });
 }
 
+function getSightingsByTime(minutes, hours, days, endTime) {
+    $.ajax({
+        url: 'https://kyleluoma.com/mooze/php/CRUD/selectTimeLayer.php',
+        type: 'post',
+        data: {
+            minutes : minutes,
+            hours : hours,
+            days : days,
+            endTime : endTime
+        },
+        cache: false,
+        success: function(json) {
+            map.on('load', function() {map.addLayer(json)});
+        },
+        error: function() {
+            //TODO: add error handling
+        }
+    })
+}
+
 function insertSighting(dateTime, currentLat, currentLon, mooseQty, bearQty) {
     $.ajax({
         url: 'https://kyleluoma.com/mooze/php/CRUD/insertSighting.php',

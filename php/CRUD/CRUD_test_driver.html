@@ -16,6 +16,16 @@
         <input type="text" id="bearqty" name="bearqty">
         <input type="submit" name="submit">
     </form>
+
+    <h2>Retreive data with end date and days, hours, minutes back</h2>
+    <form action="selectTimeLayer.php" method="POST" id="selectTimeLayerForm">
+        <input type="text" id="endTime" name="endTime">
+        <input type="text" id="days" name="days">
+        <input type="text" id="hours" name="hours">
+        <input type="text" id="minutes" name="minutes">
+        <input type="submit" name="submit">
+    </form>
+
     <script>
         //Test insertSighting:
         var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
@@ -24,11 +34,11 @@
         var mooseQty = 1;
         var bearQty = 0;
         document.getElementById('datetime').setAttribute('value', datetime);
+        document.getElementById('endTime').setAttribute('value', datetime);
         document.getElementById('latitude').setAttribute('value', latitude);
         document.getElementById('longitude').setAttribute('value', longitude);
         document.getElementById('mooseqty').setAttribute('value', mooseQty);
         document.getElementById('bearqty').setAttribute('value', bearQty);
-
 
     </script>
 </body>

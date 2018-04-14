@@ -99,6 +99,7 @@
             var bearCount = 0;
 
             //Initialize the map
+
             mapboxgl.accessToken = 'pk.eyJ1Ijoia3lsZWx1b21hIiwiYSI6ImNqZXN6YmkxaTAyaTgyd3FvZWh4eGMzNnQifQ.zuc_sYc32KMNfyi0NHitJA';
             var map = new mapboxgl.Map({
                 container: 'map',
@@ -107,12 +108,13 @@
                 style: 'mapbox://styles/mapbox/streets-v10'
             });
 
+
             //Execute these functions after document is loaded (ready)
             $(function() {
-                getUserLocation();
                 loadMapImages();
                 drawSightingMarkers();
                 initializeListeners();
+                getUserLocation();
             })
 
             //Initialize object listeners on the page:
@@ -262,6 +264,12 @@
                 });
             }
 
+            //Center the map on Anchorage or user coordinates (if Geolocation enabled)
+            function centerMap(coordinates) {
+                map.panTo(coordinates);
+                map.zoomTo(11);
+            }
+
             //Geolocation:
             var user_location = document.getElementById("userLocation");
 
@@ -284,6 +292,7 @@
                 userCoords = [userLon, userLat];
                 user_location.innerHTML = "LAT: " + userLat +
                     " LON: " + userLon;
+                centerMap([position.coords.longitude, position.coords.latitude]);
             }
         </script>
     </body>

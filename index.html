@@ -40,6 +40,7 @@
                         <td><input type="range" id="timeframeSelection" max="14400" min="1"></td>
                         <td>Timeframe:</td>
                         <td id="timeframeValue"></td>
+                        <td id="submitTimeframe" class="incDecButton"> Update</td>
                     </tr>
                 </table>
 
@@ -97,6 +98,9 @@
             var anchCoords = [anchLon, anchLat];
             var mooseCount = 0;
             var bearCount = 0;
+            var days = 30;
+            var hours = 0;
+            var minutes = 0;
 
             //Initialize the map
 
@@ -108,11 +112,11 @@
                 style: 'mapbox://styles/mapbox/streets-v10'
             });
 
-
             //Execute these functions after document is loaded (ready)
             $(function() {
                 loadMapImages();
                 drawSightingMarkers();
+                //getSightingsByTime(0, 0, 10, new Date().toISOString().slice(0, 19).replace('T', ' '));
                 initializeListeners();
                 getUserLocation();
             })
@@ -189,16 +193,16 @@
                         var datetime = new Date().toISOString().slice(0, 19).replace('T', ' ');
                         insertSighting(datetime, userCoords[1], userCoords[0], mooseCount, bearCount);
                         document.getElementById('confirmSubmit').style.visibility = 'hidden';
-                        location.reload();
+                        //location.reload();
                     }
                 });
 
                 //Timeframe selection slider:
                 var TFSel = document.getElementById('timeframeSelection');
                 TFSel.addEventListener("change", function() {
-                    var days = 0;
-                    var hours = 0;
-                    var minutes = TFSel.value;
+                    days = 0;
+                    hours = 0;
+                    minutes = TFSel.value;
                     //Present minutes in Day / Hour / Minute string:
                     if (minutes >= 60) {
                         hours = Math.floor(minutes / 60);
@@ -208,10 +212,15 @@
                         days = Math.floor(hours / 24);
                         hours = hours - (days * 24);
                     }
-                    var timeString = "" + days + " Days, "
-                        + hours + " Hours, " + minutes + " Minutes.";
+                    var timeString = "" + days + "D, "
+                        + hours + "H, " + minutes + "M ";
                     document.getElementById('timeframeValue').innerHTML = timeString;
                 })
+
+                //Reload layer with sightings filtered by date
+                document.getElementById('submitTimeframe').addEventListener("click", function() {
+                    updateSightingsByTime(minutes, hours, days, new Date().toISOString().slice(0, 19).replace('T', ' '));
+                });
             }
 
             //Submit button color setting

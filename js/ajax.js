@@ -40,7 +40,9 @@ function getAllSightings() {
         success: function(json) {
             //var mooseData = document.getElementById('mooseData'); //For debugging
             //mooseData.innerHTML = JSON.stringify(json); //For debugging
-            map.on('load', function() {map.addLayer(json)});
+            map.on('load', function () {
+                map.addLayer(json);
+            })
 
         },
         error: function() {
@@ -49,9 +51,27 @@ function getAllSightings() {
     });
 }
 
-function getSightingsByTime(minutes, hours, days, endTime) {
+function updateAllSightings() {
     $.ajax({
-        url: 'https://kyleluoma.com/mooze/php/CRUD/selectTimeLayer.php',
+        url: 'https://kyleluoma.com/mooze/php/CRUD/selectAllGeoJSON.php',
+        type: 'post',
+        data: {},
+        dataType: 'json',
+        cache: false,
+        success: function(json) {
+            map.getSource('sightings').setData(json);
+        },
+        error: function() {
+            //TODO: add error handling;
+        }
+    });
+}
+
+
+
+function updateSightingsByTime(minutes, hours, days, endTime) {
+    $.ajax({
+        url: 'https://kyleluoma.com/mooze/php/CRUD/selectTimeFilteredGeoJSON.php',
         type: 'post',
         data: {
             minutes : minutes,
@@ -61,7 +81,7 @@ function getSightingsByTime(minutes, hours, days, endTime) {
         },
         cache: false,
         success: function(json) {
-            map.on('load', function() {map.addLayer(json)});
+            map.getSource('sightings').setData(json);
         },
         error: function() {
             //TODO: add error handling
@@ -76,7 +96,7 @@ function insertSighting(dateTime, currentLat, currentLon, mooseQty, bearQty) {
         data: {datetime : dateTime, latitude : currentLat, longitude : currentLon, mooseqty : mooseQty, bearqty : bearQty},
         cache: false,
         success: function() {
-            //STUB
+            updateAllSightings();
         },
         error: function() {
             //STUB

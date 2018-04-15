@@ -10,16 +10,16 @@ require "DBtoGeoJSON.php";
 require "GeoJSONtoLayer.php";
 global $dbCon;
 $sql = "SELECT * FROM mooze.sighting WHERE datetime BETWEEN SUBTIME(:endTime, :timeBack) AND :endTime";
-echo $sql;
+//echo $sql;
 $timeBack = "" . $_POST['days'] . " " . $_POST['hours'] . ":" . $_POST['minutes'] . ":0";
-echo $timeBack;
+//echo $timeBack;
 try
 {
     $statement = $dbCon->prepare($sql);
     $statement->execute(array(':endTime' => $_POST['endTime'], ':timeBack' => $timeBack));
     $sightingArray = $statement->fetchAll();
     header("content-type:application/json");
-    echo json_encode( GeoJSONtoLayer(sightingArrayToGeoJSON($sightingArray)));
+    echo json_encode(sightingArrayToGeoJSON($sightingArray));
 }
 catch(Exception $e)
 {

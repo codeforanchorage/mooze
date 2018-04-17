@@ -33,16 +33,20 @@
         <!--link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' /-->
         <div id="coordinate"></div>
         <div id="mapAndControlPad">
-            <div id='map'></div>
+            <div id='map'>
+                <span id="openControlPad">[OPEN CONTROL PAD]</span>
+            </div>
             <div id="controlPad">
                 <table>
                     <tr>
                         <td><input type="range" id="timeframeSelection" max="14400" min="1"></td>
                         <td>Timeframe:</td>
                         <td id="timeframeValue"></td>
-                        <td id="submitTimeframe" class="incDecButton"> Update</td>
+                        <td> <div id="submitTimeframe" class="submitButton"> Update</div></td>
                     </tr>
                 </table>
+
+                <span id="closeButton" style="position: absolute; top:2%; right:2%; border: solid; padding: 3px">X</span>
 
                 <div id="counter">
                 <table id="counterTable">
@@ -158,6 +162,22 @@
                         document.getElementById('bearCount').innerHTML = bearCount;
                         setSubmitColorOnQuantityUpdate()
                     }
+                })
+
+                //Control pad close button
+                document.getElementById('closeButton').addEventListener("click", function() {
+                    document.getElementById('controlPad').style.visibility = "hidden";
+                    document.getElementById('map').style.height = "100%";
+                    document.getElementById('openControlPad').style.visibility = "visible";
+                    map.resize();
+                })
+
+                //Control pad open button
+                document.getElementById('openControlPad').addEventListener("click", function() {
+                    document.getElementById('controlPad').style.visibility = "visible";
+                    document.getElementById('map').style.height = "50%";
+                    map.resize();
+                    document.getElementById('openControlPad').style.visibility = "hidden";
                 })
 
                 //Insert sighting test button

@@ -97,6 +97,8 @@ function insertSighting(dateTime, currentLat, currentLon, mooseQty, bearQty) {
         cache: false,
         success: function() {
             updateAllSightings();
+            getUserLocation();
+            centerMap(userCoords);
         },
         error: function() {
             //STUB

@@ -118,3 +118,35 @@ html {
     visibility: hidden;
 }
 
+#closeButton {
+    position: absolute;
+    top:2%;
+    right:2%;
+    border: solid;
+    padding: 3px;
+    user-select: none;
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+}
+
+#closeButton:hover {
+    background-color: red;
+}
+
+#openControlPad {
+    user-select: none;
+    position: absolute;
+    bottom: 2%;
+    left: 45%;
+    border: solid;
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    z-index: 15;
+    visibility: hidden;
+}
+
+#openControlPad:hover {
+    background-color: lightgray;
+}

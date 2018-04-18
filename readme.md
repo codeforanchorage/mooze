@@ -21,9 +21,11 @@ to access your MySQL database.
 
 ### Installing
 [TODO: Add installation instructions.]
-A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
+Start with a LAMP (Linux, Apache, MySQL, PHP)
+Run /sql/create_tables.sql in MySQL to create mooze schema and sightings table
+Update /php/CRUD/dbconnect.php with local database information
+   - Recommend creating username with privileges limited to insert/update access.
 
 ```
 Give the example

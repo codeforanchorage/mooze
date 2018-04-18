@@ -71,8 +71,8 @@
         <entry file="file://$PROJECT_DIR$/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="278">
-                <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -714,11 +714,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524018030045</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Minor change to readme.md">
+      <created>1524018065906</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1524018065906</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107561000" />
+    <option name="totallyTimeSpent" value="107639000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -784,7 +791,8 @@
     <MESSAGE value="Added php and ajax to select sightings by time" />
     <MESSAGE value="Debugged php filtering" />
     <MESSAGE value="Added simple readme.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added simple readme.md" />
+    <MESSAGE value="Minor change to readme.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor change to readme.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1147,8 +1155,8 @@
     <entry file="file://$PROJECT_DIR$/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="278">
-            <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
             <folding />
           </first_editor>
           <second_editor />

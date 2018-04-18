@@ -1,4 +1,4 @@
-# Project Title
+# Mooze Wildlife Tracker
 
 Web-based wildlife tracking application geared toward the Anchorage, 
 AK metro area. Allows users to view recent wildlife sightings reported 

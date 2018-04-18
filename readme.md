@@ -6,6 +6,8 @@ by other users. Users submit sighting reports using a simple control
 pad interface. Their geolocation is automatically submitted if the 
 browser allows geolocation data access.
 
+View a working prototype at: https://kyleluoma.com/mooze
+
 ## Getting Started
 
 Currently operates on a standard LAMP stack.
